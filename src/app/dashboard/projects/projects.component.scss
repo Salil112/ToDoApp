@@ -1,0 +1,52 @@
+
+
+  .card-body{
+      color: black;
+      flex: 1 1 auto;
+      min-height: 1px;
+      padding: 1.25rem;
+      font-size: 18px;
+  }
+
+  .task {
+    margin-bottom: 0.2em;
+    background: whitesmoke;
+    cursor: pointer;
+    font-size: 0.85em;
+    font-family: "Roboto Slab", sans-serif;      
+      border-left-style: solid;
+      padding: 0px;
+  }
+
+  .header {
+    padding: 14px 0;
+    font-weight: bolder;
+    text-align: center;
+    font-family: "sans-serif";
+    font-size: 24px;
+  }
+
+  .mainCard{
+      width: 100%;
+  }
+  
+  
+  .priorityHigh {
+    border-left-color : red;
+    border-left-width: 10px;
+  }
+  
+  .priorityLow {
+    border-left-color: gray;
+    border-left-width: 10px;
+  }
+  
+  .priorityMedium {
+    border-left-color : blue;
+    border-left-width: 10px;
+  }
+
+  .icons{
+      float: right;
+      cursor:pointer
+  }

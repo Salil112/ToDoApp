@@ -1,0 +1,47 @@
+
+
+<div fxFlexFill fxLayout="column">
+    <app-header [showLogin]="false"></app-header>
+    <div fxFlex fxLayout="column">
+        <div fxFlex fxLayout="row" fxLayoutAlign="center start">
+            <div class="sign-in-wrapper" fxLayout="column" fxLayoutAlign="center center" fxFlex="35" fxflex.gt-sm="100">
+                <mat-card class="login-card">
+                    <mat-card-title>
+                        <div class="icon-header mb-2" fxLayout="row" fxLayoutAlign="center center">
+                            <div><mat-label>Sign In</mat-label></div>
+                        </div>
+                    </mat-card-title>
+                    <mat-card-content>
+                        <form class="form-container" (ngSubmit)="login(f)" #f="ngForm" autocomplete="off">
+                            <div fxLayout="column">
+                                <div>
+                                    <mat-form-field appearance="outline" class="w-100">
+                                        <mat-label>Email Address</mat-label>
+                                        <input type="email" matInput maxlength="50" (keyup.enter)="f.valid?login(f):''"
+                                            autocomplete="doNotAutoComplete" value="" name="email" email ngModel>
+                                    </mat-form-field>
+                                </div>
+                                <div>
+                                    <mat-form-field floatLabel='never' appearance="outline" style="vertical-align:middle;" class="w-100">
+                                        <mat-label>Password</mat-label>
+                                        <input type="password" matInput maxlength="150" autocomplete="doNotAutoComplete"
+                                            (keyup.enter)="f.valid?login(f):''" maxlength="50" value="" name="password" password
+                                            ngModel 
+                                            [type]="hide ? 'password' : 'text'">
+                                        <mat-icon matSuffix class="visibilityIcon" (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                                    </mat-form-field>
+                                </div>
+                                <div>
+                                    <button mat-raised-button class="btn large btn-white w-100" type="submit">Sign In</button>
+                                </div>
+                                <div class="mt-4">
+                                    <a class="link" href="javascript:void(0)" (click)="forgetPassword()">Forgot your password?</a>
+                                </div>
+                            </div>
+                        </form>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

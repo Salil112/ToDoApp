@@ -1,0 +1,20 @@
+<div cdkDropList #todoy="cdkDropList" [cdkDropListData]="list"
+		[cdkDropListConnectedTo]=connectedTo (cdkDropListDropped)="drop($event)">
+     <div [style.background]="name=='To Do'?'#fa9300':name=='In Progress'?'#2c9f2c':'#bd0101'" class="header">{{name}}</div>
+		<div *ngFor="let item of list; let i = index" class="task"
+			[ngClass]="{'priorityLow': item.points <= 3, 'priorityMedium': item.points > 3 && item.points <= 7, 'priorityHigh': item.points > 7}"
+			cdkDrag>
+			<div class="card" style="width: 100%;">
+				<div class="card-body">
+					<p class="card-text" style="margin:0px">Task: {{item.name}} </p>
+					<p>Points: {{item.points}}
+                        <mat-icon matSuffix class="icons"style="padding-right:12px" name="Edit" (click)="openTask(item,i,name)">{{'edit'}}</mat-icon>
+                        <mat-icon matSuffix class="icons" (click)="trash(list,i,name)" name="Delete">{{'delete'}}</mat-icon>
+					</p>
+				</div>
+			</div>
+		</div>
+        <div *ngIf="list.length==0" style="height: 100vh;"
+        cdkDrag>
+    </div>
+</div>

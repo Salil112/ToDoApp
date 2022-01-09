@@ -1,0 +1,15 @@
+<div style="padding: 1.2rem 3rem;">
+    <div fxLayout="row" fxLayoutAlign="space-between start">
+        <div fxLayout="column" [routerLink]="[ '' ]" style="cursor: pointer;">
+            <img src="assets/logo.png" style="max-height: 100px;">
+        </div>
+        <div fxLayout="column">
+            <div fxLayout="row">
+                <button mat-raised-button class="btn btn-white ml-1 mr-1" *ngIf="showLogin && !commonService.isLoggedIn" [routerLink]="[ '/signin' ]">Login</button>
+                <button mat-raised-button class="btn btn-white ml-1 mr-1" *ngIf="showSignup" [routerLink]="[ '/signup' ]">Sign Up</button>
+                <button mat-raised-button class="btn btn-white ml-1 mr-1" *ngIf="commonService.isLoggedIn" (click)="triggerEvent('task' , $event)">Create Task</button>
+                <button mat-raised-button class="btn btn-white ml-1 mr-1" *ngIf="showLogout" (click)="onClicklogout()" >Logout</button>
+            </div>
+        </div>
+    </div>
+</div>

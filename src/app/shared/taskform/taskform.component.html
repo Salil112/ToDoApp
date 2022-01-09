@@ -1,0 +1,35 @@
+<div fxLayout="column" fxFlexFill>
+    <div class="headerInfo">
+        <h1 class="page-header">Enter Task Information</h1>
+    </div>
+    <div>
+        <mat-form-field appearance="outline" class="w-100">
+            <mat-label>Task Name</mat-label>
+            <input matInput type="text" id="task-name" placeholder="Task Name" [(ngModel)]="taskName"
+                maxlength="50" 
+                name="taskNameType" #taskNameType="ngModel" [ngModelOptions]="{standalone: true}"
+                required />
+            <mat-error *ngIf="taskNameType.errors?.required">This field is required</mat-error>
+        </mat-form-field>
+    </div>
+    <div class="subDiv">
+        <div>
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Story Points</mat-label>
+                    <mat-select  matInput [(ngModel)]="storyPoints"  name="storyPointsType"
+                    #storyPointsType="ngModel"
+                    placeholder="Story Points" [ngModelOptions]="{standalone: true}"
+                    aria-required="required" required>
+                    <mat-option *ngFor = "let k of storyPointsArray" [value]=k.value>
+                        {{k.value}}
+                      </mat-option>
+                  </mat-select>
+                <mat-error *ngIf="storyPointsType.errors?.required">This field is required</mat-error>
+            </mat-form-field>
+        </div>
+    </div>
+
+    <div>
+        <button mat-raised-button class="btn btn-black" (click)="submit()" [disabled]="storyPointsType.errors || taskNameType.errors">Create</button>
+    </div>
+</div>

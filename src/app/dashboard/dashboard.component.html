@@ -1,0 +1,13 @@
+<app-header  [showLogin]="true"  [showSignup]="false" [showLogout]="true" (performAction)="onActionChange($event)"></app-header>
+
+<p class="parHead">My Task List</p>
+
+<div cdkDropListGroup>
+	<div class="container collapsible division" [@collapse]="collapsed" >
+		<div class="row">
+			<app-projects class="col-sm"  name='To Do' [list]="commonService.toDoList"></app-projects >
+			<app-projects  class="col-sm"  name='In Progress' [list]="commonService.inProgressList"></app-projects >
+			<app-projects  class="col-sm"  name='Done' [list]="commonService.doneList"></app-projects >
+		</div>
+	</div>
+</div>

@@ -1,0 +1,112 @@
+div {
+    font-family: Lato;
+  }
+  
+  .col-sm {
+    padding : 2px;
+  }
+  
+    .wrap {
+            display: flex;
+            justify-content: space-between;
+          }
+  
+          .wrap .desc {
+            width: 65%;
+          }
+          .wrap .priority {
+            width: 30%;
+          }
+  
+  
+         .wrap .ddate {
+            width: 65%;
+  
+          }
+           .wrap .owner {
+            width: 30%;
+  
+          }
+  
+  .board {
+    width: 100%;
+    border: 0px solid saddlebrown;
+    height: 600px;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  
+  .lane {
+    border: 1px solid black;
+    padding: 2px;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .task {
+  
+    margin-bottom: 0.5em;
+    background: whitesmoke;
+    cursor: pointer;
+    font-size: 0.85em;
+    font-family: "Roboto Slab", sans-serif;      
+      border-left-style: solid;
+     /* border-left-color: red; */
+      padding: 5px;
+  }
+  .task:hover {
+    outline: 3px solid #205081;
+  }
+  
+  .heading {
+    padding: 1em 0;
+    font-weight: bolder;
+    background: #ffffff;
+    color: #000000;
+    border-bottom: 0.5em solid #ffffff;
+    text-align: center;
+    font-family: "Roboto Slab", sans-serif;
+  }
+  
+  .collapseDiv {
+    padding-left : 5px;
+  }
+  .taskStatus {
+    font-size: smaller;
+    color : grey;
+  }
+  .todo {
+    background: #3572b0;
+  }
+  
+  .collapsible {
+    overflow: hidden;
+  }
+  
+  
+  .doing {
+    background: #f6c342;
+  }
+  
+  .done {
+      background: #14892c;
+  }
+  
+  .priorityHigh {
+    border-left-color : red;
+  }
+  
+  .priorityLow {
+    border-left-color: blue;
+  }
+  
+  .priorityMedium {
+    border-left-color : orange;
+  }
+  
+  .parHead{
+    padding-left: 47px;
+    font-size: 25px;
+    font-weight: 500;
+  }
